@@ -20,7 +20,7 @@ public class VendingMachine {
 		this.cokeStock = cokeStock;
 		this.cyderStock = cyderStock;
 		this.fantaStock = fantaStock;
-	}
+	} // 구입한 음료의 가격, 남은 음료의 개수 값을 가지고 있음.
 
 	public int getMoney() {
 		return money;
@@ -71,9 +71,9 @@ public class VendingMachine {
 
 			System.out.print("메뉴를 선택하세요 : ");
 			// 사용자가 메뉴를 선택한다.
-			selectedMenu = buyer.selectMenu();
+			selectedMenu = buyer.selectMenu(); //Buyer클래스에서 selectMenu()메소드에 있는 스캐너를 이용하여 입력 받은 음료의 숫자를 selectedMenu에 할당함.
 
-			if (selectedMenu == COKE) {
+			if (selectedMenu == COKE) {  //selectedMenu가 1이면
 				if (cokeStock > 0) {
 					if (insertedMoney >= COKE_PRICE) {
 						cokeStock -= 1;
@@ -88,7 +88,7 @@ public class VendingMachine {
 			} else if (selectedMenu == CYDER) {
 				if (cyderStock > 0) {
 					if (insertedMoney >= CYDER_PRICE) {
-						cokeStock -= 1;
+						cyderStock -= 1;
 						buyer.putDrink(CYDER);
 						insertedMoney -= CYDER_PRICE;
 					} else {
@@ -100,7 +100,7 @@ public class VendingMachine {
 			} else if (selectedMenu == FANTA) {
 				if (fantaStock > 0) {
 					if (insertedMoney >= FANTA_PRICE) {
-						cokeStock -= 1;
+						fantaStock -= 1;
 						buyer.putDrink(FANTA);
 						insertedMoney -= FANTA_PRICE;
 					} else {
